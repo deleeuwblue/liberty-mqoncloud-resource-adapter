@@ -34,7 +34,22 @@ You'll need to install the new Liberty feature with:
 
 /bin/installUtility install wmqjmsclient-2.0
 
-## Create an Instance of IBM MQ on Cloud and create MQ Resources
+## Deploy an Instance of IBM MQ on Cloud & Create a Queue Manager
+
+https://cloud.ibm.com/docs/mqcloud?topic=mqcloud-mqoc_create_qm
+
+Once deployed, click the three dots and note or download the Connection Details.
+
+## Create a Test Queue
+
+Follow the instructions to use MQ Console to create a local test queue.  Name the queue TEST.QUEUE instead of DEV.TEST.1.
+
+https://cloud.ibm.com/docs/mqcloud?topic=mqcloud-mqoc_admin_mqweb
+
+## Create an Application User for MQ
+
+From the IBM Cloud service defintion page, select the "Application credentials" tab to add a new application user:
+
 
 
 
@@ -46,9 +61,15 @@ Copy the supplied wmq.jmsra.ivt.ear to the server dropins folder, i.e. /usr/serv
 
 Now add the required server.xml configuration for the IVT app.  This is where things get interesting as the official documentation does not include configuration for TLS, which is enabled by default for MQ on Cloud Queue Manager of v9.2.1 and above.
 
+Add the following sections to server.xml:
+
+
+
+
+
 server start servermq
 
-Check the 
+
 
 
 
