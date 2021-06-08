@@ -19,7 +19,7 @@ The MQ Resource Apdater (RA) allows applications that are running in an applicat
 
 Follow these steps to download the RA from IBM Fix Central and install into Liberty.  This involves extrating the downloaded archive, referencing it from server.xml and installing the wmqJmsClient-2.0 feature to Liberty.
 
-https://www.ibm.com/docs/en/ibm-mq/9.2?topic=adapter-installing-resource-in-liberty#q128160_
+https://www.ibm.com/docs/en/ibm-mq/9.2?topic=adapter-installing-resource-in-liberty#q128160
 
  The server.xml will contain:
 
