@@ -41,6 +41,8 @@ https://cloud.ibm.com/docs/mqcloud?topic=mqcloud-mqoc_create_qm
 
 Once deployed, click the three dots and note or download the Connection Details.
 
+![QMconndetails](https://user-images.githubusercontent.com/8861294/121190602-20a60200-c863-11eb-8809-c04a7aa64ea5.png)
+
 ## Create a Test Queue
 
 Follow the instructions to use MQ Console to create a local test queue.  Name the queue TEST.QUEUE instead of DEV.TEST.1.
