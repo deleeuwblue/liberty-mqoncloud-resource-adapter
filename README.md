@@ -39,7 +39,7 @@ You'll need to install the new Liberty feature with:
 
 https://cloud.ibm.com/docs/mqcloud?topic=mqcloud-mqoc_create_qm
 
-Once deployed, click the three dots and note or download the Connection Details.
+Once deployed, click the three dots and note or download the connection details.
 
 ![QMconndetails](https://user-images.githubusercontent.com/8861294/121190602-20a60200-c863-11eb-8809-c04a7aa64ea5.png)
 
