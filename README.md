@@ -119,8 +119,23 @@ As I am working with Mac, the command to create the JKS key store is as follows:
 
 keytool -importcert -file qmgrcert.pem  -alias qmgrcert -keystore <trustStoreName>.jks -storepass <trustStorePassword>
  
-I stored the resulting key.jks file to /usr/servers/servermq/resources/security
+I stored the resulting key.jks file to /usr/servers/servermq/resources/security.  The default key store format for Liberty is PKCS12, but JKS can also be used.  I added the following line to server.xml to reference the previously created JKS key store:
  
+ <keyStore id="defaultKeyStore" location="key.jks" password="" type="JKS"/>
+ 
+ 
+ ## Setting User Permisions in MQ on Cloud
+ 
+Before testing the IVT app, additional permissions need to be granted to MQ resources for the application user (ivtapp).
+
+Using MQ Console, use the filter icon to "Show system queues", then set permisions on the SYSTEM.DEFAULT.MODEL.QUEUE by clicking the three dots, then "View Configuration", then "Security" to grant access to user "ivtapp":
+ 
+![ivtapppermissions](https://user-images.githubusercontent.com/8861294/121172098-3dd0d580-c84f-11eb-8b18-3c6598d80d1c.png)
+
+ 
+
+ 
+
 
 
  
