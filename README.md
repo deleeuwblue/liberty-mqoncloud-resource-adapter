@@ -139,7 +139,7 @@ Using MQ Console, use the filter icon to "Show system queues", then set permisio
 
 Start the server:
 
-server start servermq
+/bin/server start servermq
  
 Access the web app at http://localhost:9080/WMQ_IVT and press the Run IVT button.  The result should be as follows:
  
@@ -147,4 +147,4 @@ Access the web app at http://localhost:9080/WMQ_IVT and press the Run IVT button
 
 The JMS application is able to use the resource definitions in server.xml to connect to the Queue Manager on IBM Cloud, using the appropriate application user and TLS configuration.
  
-You will notice there is a warning "Receiving response message from the MDB... failed to receive response message!".  It's not clear what causes this issue and IBM MQ support are planning to look into it.  However, the main purpose of this tutorial was to demonstrate the configuration required for using the RA with Liberty.
+You will notice there is a warning "Receiving response message from the MDB... failed to receive response message!" at the penultimate step.  It's not clear what causes this issue and IBM MQ support are planning to look into it.  However, the main purpose of this tutorial was to demonstrate the configuration required for using the RA with Liberty.
