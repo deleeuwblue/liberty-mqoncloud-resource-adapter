@@ -51,7 +51,7 @@ https://cloud.ibm.com/docs/mqcloud?topic=mqcloud-mqoc_admin_mqweb
 
 ## Create an Application User for MQ
 
-From the IBM Cloud service defintion page, select the "Application credentials" tab to add a new application user (e.g. "ivtapp"), taking note of its API Key:
+From the IBM Cloud service defintion page, select the "Application credentials" tab to add a new application user (e.g. "ivtapp"), taking note of its API Key.
 
 ![ivtapp](https://user-images.githubusercontent.com/8861294/121043358-71a6ef00-c7ac-11eb-84f6-dccf30128960.png)
 
@@ -114,7 +114,7 @@ It's also necessary to import the public certificate for the Queue Manager into 
 
 https://cloud.ibm.com/docs/mqcloud?topic=mqcloud-mqoc_configure_chl_ssl#mqoc_chl_ssl_keystore_jks
 
-The required certificate can de dowloaded from MQ on Cloud:
+The required certificate can de dowloaded from MQ on Cloud.
 
 ![QMcert](https://user-images.githubusercontent.com/8861294/121169601-13c9e400-c84c-11eb-8b80-1292fe82091d.png)
 
@@ -131,7 +131,7 @@ I stored the resulting key.jks file to /usr/servers/servermq/resources/security.
  
 Before testing the IVT app, additional permissions need to be granted to MQ resources for the application user (ivtapp).
 
-Using MQ Console, use the filter icon to "Show system queues", then set permisions on the **SYSTEM.DEFAULT.MODEL.QUEUE** and **TEST.QUEUE** by clicking the three dots, then "View Configuration", then "Security" to grant all permissions for user "ivtapp":
+Using MQ Console, use the filter icon to "Show system queues", then set permisions on the **SYSTEM.DEFAULT.MODEL.QUEUE** and **TEST.QUEUE** by clicking the three dots, then "View Configuration", then "Security" to grant all permissions for user "ivtapp".
  
 ![ivtapppermissions](https://user-images.githubusercontent.com/8861294/121187138-a627b300-c85f-11eb-8ec0-f6ea8c59b7bd.png)
  
