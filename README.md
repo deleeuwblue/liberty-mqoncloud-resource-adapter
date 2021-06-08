@@ -1,7 +1,7 @@
 # liberty-mqoncloud-resource-adapter
 Testing IBM Liberty with MQ Resource Adapter, using MQ on Cloud
 
-This is a tutorial to install and configure IBM Liberty, with the IBM MQ Resource Adapter and test using an Installation Verification Test, unsing IBM MQ on Cloud.
+This is a tutorial to install and configure IBM Liberty with the IBM MQ Resource Adapter, and test a JMS application using an Installation Verification Test, using IBM MQ on Cloud.
 
 ## Download & Extract IBM Liberty
 
