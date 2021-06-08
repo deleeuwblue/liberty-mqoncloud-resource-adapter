@@ -62,7 +62,7 @@ You can use the IVT EAR to test the configuration of the Resource Adapter and MQ
 
 Copy the supplied wmq.jmsra.ivt.ear to the server dropins folder, i.e. /usr/servers/servermq/dropins
 
-Now add the required server.xml configuration for the IVT app.  This is where things get interesting as the official documentation does not include configuration for TLS, which is enabled by default for MQ on Cloud Queue Manager of v9.2.1 and above.
+Now add the required server.xml configuration for the IVT app.  This is where things get interesting as you'll need to configure for TLS which is enabled by default for MQ on Cloud Queue Manager of v9.2.1 and above.
 
 Add the following sections to server.xml, using the connection details for your MQ Queue Manager.  
 
