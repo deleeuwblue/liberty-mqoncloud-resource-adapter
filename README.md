@@ -66,6 +66,14 @@ Now add the required server.xml configuration for the IVT app.  This is where th
 
 Add the following sections to server.xml, using the connection details for your MQ Queue Manager.  
 
+<!-- Enable features -->
+    <featureManager>
+        <feature>webProfile-8.0</feature>
+        <feature>wmqJmsClient-2.0</feature> 
+    </featureManager>
+
+     <variable name="wmqJmsClient.rar.location" value="/Users/deleeuw@uk.ibm.com/wlp_21005/wlp/usr/servers/servermq/wmq/wmq.jmsra.rar"/>
+
 <!-- IVT Connection factory -->
 <jmsQueueConnectionFactory connectionManagerRef="ConMgrIVT" jndiName="IVTCF">
    <properties.wmqJms channel="SSL.SVRCONN" 
