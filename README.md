@@ -124,29 +124,25 @@ I stored the resulting key.jks file to /usr/servers/servermq/resources/security.
  <keyStore id="defaultKeyStore" location="key.jks" password="" type="JKS"/>
  
  
- ## Setting User Permisions in MQ on Cloud
+## Setting User Permisions in MQ on Cloud
  
 Before testing the IVT app, additional permissions need to be granted to MQ resources for the application user (ivtapp).
 
-Using MQ Console, use the filter icon to "Show system queues", then set permisions on the SYSTEM.DEFAULT.MODEL.QUEUE by clicking the three dots, then "View Configuration", then "Security" to grant access to user "ivtapp":
+Using MQ Console, use the filter icon to "Show system queues", then set permisions on the **SYSTEM.DEFAULT.MODEL.QUEUE** and **TEST.QUEUE** by clicking the three dots, then "View Configuration", then "Security" to grant all permissions for user "ivtapp":
  
-![ivtapppermissions](https://user-images.githubusercontent.com/8861294/121172098-3dd0d580-c84f-11eb-8b18-3c6598d80d1c.png)
-
- 
-
+![ivtapppermissions](https://user-images.githubusercontent.com/8861294/121187138-a627b300-c85f-11eb-8ec0-f6ea8c59b7bd.png)
  
 
+## Testing the IVT App 
 
-
- 
- 
- 
+Start the server:
 
 server start servermq
+ 
+Access the web app at http://localhost:9080/WMQ_IVT and press the Run IVT button.  The result should be as follows:
+ 
+![ivtresults](https://user-images.githubusercontent.com/8861294/121187843-644b3c80-c860-11eb-9b1d-568eec463acf.png)
 
-WORK IN PROGRESS
-
-
-
-
-
+The JMS application is able to use the resource definitions in server.xml to connect to the Queue Manager on IBM Cloud, using the appropriate application user and TLS configuration.
+ 
+You will notice there is a warning "Receiving response message from the MDB... failed to receive response message!".  It's not clear what causes this issue and IBM MQ support are planning to look into it.  However, the main purpose of this tutorial was to demonstrate the configuration required for using the RA with Liberty.
