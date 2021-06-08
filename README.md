@@ -100,7 +100,7 @@ Add the following sections to server.xml, using the connection details for your 
     </jmsActivationSpec>
 
 
-When creating the Queue Manager with MQ on Cloud, the default cipher spec is "ANY_TLS12_OR_HIGHER", therefore the sslCipherSuite for the RA is set accordingly to "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256".  Note that the JRE dictates the appropriate values for sslCipherSuite.  On Mac, the only option is Oracle JRE but for othe platforms an IBM JRE is available.  See the following link for the equivalent values for IBM JRE.  For Windows with an IBM JRE you could use "SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256" instead
+When creating the Queue Manager with MQ on Cloud, the default cipher spec is "ANY_TLS12_OR_HIGHER", therefore the sslCipherSuite for the RA is set accordingly to "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256".  Note that the JRE dictates the appropriate values for sslCipherSuite.  On Mac, the only option is Oracle JRE but for othe platforms an IBM JRE is available.  See the following link for the equivalent values for IBM JRE.  For Windows or Linux with an IBM JRE you could use "SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256" instead.
 https://www.ibm.com/docs/en/ibm-mq/9.2?topic=jms-tls-cipherspecs-ciphersuites-in-mq-classes
 
 Also be aware that the MQ classes in the RA will assume an IBM JSSE provider unless the System Property com.ibm.mq.cfg.useIBMCipherMappings is set to false.  See this blog for a great explanation of the relationship between MQ CipherSpecs and Java Cipher Suites:
