@@ -66,45 +66,38 @@ Now add the required server.xml configuration for the IVT app.  This is where th
 
 Add the following sections to server.xml, using the connection details for your MQ Queue Manager.  
 
-<!-- Enable features -->
-    <featureManager>
-        <feature>webProfile-8.0</feature>
-        <feature>wmqJmsClient-2.0</feature> 
-    </featureManager>
 
-     <variable name="wmqJmsClient.rar.location" value="/Users/deleeuw@uk.ibm.com/wlp_21005/wlp/usr/servers/servermq/wmq/wmq.jmsra.rar"/>
+    <!-- IVT Connection factory -->
+    <jmsQueueConnectionFactory connectionManagerRef="ConMgrIVT" jndiName="IVTCF">
+       <properties.wmqJms channel="SSL.SVRCONN" 
+         hostname="qmivt-09ca.qm.us-south.mq.appdomain.cloud" 
+         port="30932"
+         queueManager="QMIVT"  
+         transportType="CLIENT" 
+         userName="ivtapp" 
+         password="<ivtapp user API key>"
+         sslCipherSuite="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"/>
+    </jmsQueueConnectionFactory>
+    <connectionManager id="ConMgrIVT" maxPoolSize="10"/>
 
-<!-- IVT Connection factory -->
-<jmsQueueConnectionFactory connectionManagerRef="ConMgrIVT" jndiName="IVTCF">
-   <properties.wmqJms channel="SSL.SVRCONN" 
-     hostname="qmivt-09ca.qm.us-south.mq.appdomain.cloud" 
-     port="30932"
-     queueManager="QMIVT"  
-     transportType="CLIENT" 
-     userName="ivtapp" 
-     password="<ivtapp user API key>"
-     sslCipherSuite="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"/>
-</jmsQueueConnectionFactory>
-<connectionManager id="ConMgrIVT" maxPoolSize="10"/>
+    <!-- IVT Queues -->
+    <jmsQueue id="IVTQueue" jndiName="IVTQueue">
+       <properties.wmqJms baseQueueName="TEST.QUEUE"/>
+    </jmsQueue>
 
-<!-- IVT Queues -->
-<jmsQueue id="IVTQueue" jndiName="IVTQueue">
-   <properties.wmqJms baseQueueName="TEST.QUEUE"/>
-</jmsQueue>
-
-<!-- IVT Activation Spec -->
-<jmsActivationSpec id="wmq.jmsra.ivt/WMQ_IVT_MDB/WMQ_IVT_MDB">  
-    <properties.wmqJms destinationRef="IVTQueue" 
-      transportType="CLIENT" 
-      queueManager="QMIVT" 
-      channel="SSL.SVRCONN"
-      hostName="qmivt-09ca.qm.us-south.mq.appdomain.cloud"
-      userName="ivtapp" 
-      password="<ivtapp user API key>" 
-      port="30932" 
-      maxPoolDepth="1"
-      sslCipherSuite="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"/>
-</jmsActivationSpec>
+    <!-- IVT Activation Spec -->
+    <jmsActivationSpec id="wmq.jmsra.ivt/WMQ_IVT_MDB/WMQ_IVT_MDB">  
+        <properties.wmqJms destinationRef="IVTQueue" 
+          transportType="CLIENT" 
+          queueManager="QMIVT" 
+          channel="SSL.SVRCONN"
+          hostName="qmivt-09ca.qm.us-south.mq.appdomain.cloud"
+          userName="ivtapp" 
+          password="<ivtapp user API key>" 
+          port="30932" 
+          maxPoolDepth="1"
+          sslCipherSuite="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"/>
+    </jmsActivationSpec>
 
 
 When creating the Queue Manager with MQ on Cloud, the default cipher spec is "ANY_TLS12_OR_HIGHER", therefore the sslCipherSuite for the RA is set accordingly to "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256".  Note that the JRE dictates the appropriate values for sslCipherSuite.  On Mac, the only option is Oracle JRE but for othe platforms an IBM JRE is available.  See the following link for the equivalent values for IBM JRE.  For Windows with an IBM JRE you could use "SSL_ECDHE_RSA_WITH_AES_128_CBC_SHA256" instead
