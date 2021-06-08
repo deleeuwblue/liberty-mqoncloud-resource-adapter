@@ -145,6 +145,6 @@ Access the web app at http://localhost:9080/WMQ_IVT and press the Run IVT button
  
 ![ivtresults](https://user-images.githubusercontent.com/8861294/121187843-644b3c80-c860-11eb-9b1d-568eec463acf.png)
 
-The JMS application is able to use the resource definitions in server.xml to connect to the Queue Manager on IBM Cloud, using the appropriate application user and TLS configuration.
+You will notice there is a warning "Receiving response message from the MDB... failed to receive response message!" at the penultimate step.  It's not clear what causes this issue and IBM MQ support are planning to look into it.  
  
-You will notice there is a warning "Receiving response message from the MDB... failed to receive response message!" at the penultimate step.  It's not clear what causes this issue and IBM MQ support are planning to look into it.  However, the main purpose of this tutorial was to demonstrate the configuration required for using the RA with Liberty.
+The purpose of this tutorial was to demonstrate the configuration required for using the RA with Liberty.  The JMS application is able to use the resource definitions in server.xml to connect to the Queue Manager on IBM Cloud, using the appropriate application user and TLS configuration.
